@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6ef" />
+    <title>Kertkör — Kerti teendők</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=7" />
+    <script src="app.js?v=7" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Kertkör kezdőlap">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>Kertkör</span>
+        </a>
+        <div class="house-label"><span class="status-dot"></span> Közös kerti naptár</div>
+      </header>
+
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> EGYÜTT GONDOSKODUNK</p>
+          <h1>A kert nem<br />gondozza <span>magát.</span></h1>
+          <p class="intro-text">Minden feladatnak megvan a maga sora. Nézzétek meg, ki következik, és pipáljátok ki, amikor elkészültetek.</p>
+          <div class="resident-strip">
+            <span class="resident-label">A négy lakó</span>
+            <div class="avatar-stack" aria-label="Józsi, Artem, Maria és Misi">
+              <span class="avatar avatar-sage">J</span>
+              <span class="avatar avatar-peach">A</span>
+              <span class="avatar avatar-lilac">M</span>
+              <span class="avatar avatar-yellow">M</span>
+            </div>
+            <span class="resident-names">Józsi · Artem · Maria · Misi</span>
+          </div>
+        </div>
+        <div class="intro-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="art-circle"></div>
+          <div class="art-leaf leaf-one"></div>
+          <div class="art-leaf leaf-two"></div>
+          <div class="art-leaf leaf-three"></div>
+          <div class="art-stem"></div>
+          <div class="art-ground"></div>
+          <span class="art-spark spark-one">✳</span>
+          <span class="art-spark spark-two">✳</span>
+        </div>
+      </section>
+
+      <section class="overview" aria-label="Összefoglaló">
+        <div class="overview-card date-card">
+          <span class="card-icon calendar-icon" aria-hidden="true">▦</span>
+          <div><span class="metric-label">MA</span><strong id="today-label">—</strong></div>
+        </div>
+        <div class="overview-card">
+          <span class="card-icon task-icon" aria-hidden="true">✳</span>
+          <div><span class="metric-label">KÖVETKEZŐ FELADAT</span><strong id="next-task-label">—</strong></div>
+        </div>
+        <div class="overview-card">
+          <span class="card-icon people-icon" aria-hidden="true">↗</span>
+          <div><span class="metric-label">SORON KÖVETKEZIK</span><strong id="next-person-label">—</strong></div>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="tasks-panel panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">A TEENDŐK</p>
+              <h2>Ki következik?</h2>
+            </div>
+            <span class="live-pill"><span></span> Folyamatban</span>
+          </div>
+          <p class="section-description">A két feladat külön-külön halad körbe a lakók között.</p>
+
+          <div class="task-table" role="table" aria-label="Következő kerti teendők">
+            <div class="table-header" role="row">
+              <span role="columnheader">FELADAT</span>
+              <span role="columnheader">KÖVETKEZŐ ALKALOM</span>
+              <span role="columnheader">SORON KÖVETKEZIK</span>
+              <span role="columnheader"></span>
+            </div>
+            <div id="task-rows"></div>
+          </div>
+          <p class="rotation-note"><span aria-hidden="true">↻</span> Elvégzés után a sor automatikusan a következő lakóra ugrik.</p>
+        </section>
+
+        <section class="calendar-panel panel">
+          <div class="section-heading calendar-heading">
+            <div>
+              <p class="eyebrow">ELŐRETEKINTÉS</p>
+              <h2>Naptár</h2>
+            </div>
+            <div class="month-controls">
+              <button class="month-button" id="prev-month" type="button" aria-label="Előző hónap">‹</button>
+              <span id="month-label" aria-live="polite">—</span>
+              <button class="month-button" id="next-month" type="button" aria-label="Következő hónap">›</button>
+              <button class="today-button" id="current-month" type="button">Ma</button>
+            </div>
+          </div>
+          <div class="calendar-grid" id="calendar-grid" aria-label="Havi naptár"></div>
+          <div class="day-details" id="day-details" aria-live="polite"></div>
+          <div class="calendar-legend">
+            <span><i class="legend-dot mowing-dot"></i> Fűnyírás</span>
+            <span><i class="legend-dot leaves-dot"></i> Levélseprés</span>
+            <span><i class="legend-dot completed-dot"></i> Elvégezve</span>
+          </div>
+          <div class="calendar-footnote"><span aria-hidden="true">☀</span> A beosztás a következő hónapokban is folytatódik.</div>
+        </section>
+      </div>
+
+      <footer class="footer"><span>Gondozott kert, jó közös otthon.</span><span class="footer-flower">✳</span></footer>
+    </main>
+  </body>
+</html>
